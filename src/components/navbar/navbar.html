@@ -1,0 +1,12 @@
+<div class="row">
+  <ul id="nav" class="h4">
+    <li ng-repeat="item in items">
+      <a ng-if="item.state" ui-sref={{item.state}}>{{item.name}}</a>
+      <p ng-if="!item.state">{{item.name}}</p>
+      <ul class="nav first" ng-if="item.subitems">
+        <li ng-repeat="item in item.subitems" ng-include="'components/navbar/menuitem.html'">
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
